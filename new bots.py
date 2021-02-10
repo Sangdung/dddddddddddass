@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -48,7 +49,8 @@ async  def on_message(message):
         role = discord.utils.get(message.guild.roles, name="뮤트")
         await author.remove_roles(role)
 
-client.run("ODA4OTMxOTY3MTUxNzY3NTYy.YCNumg.AtnxPwzEpAHqAVFRD72Ti-_c30s")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
 
 
